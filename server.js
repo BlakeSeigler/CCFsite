@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from www.unc.edu directory
-const staticPath = path.join(__dirname, 'www.unc.edu');
+const staticPath = path.join(__dirname, 'src');
 app.use(express.static(staticPath));
 
 // Serve index.html for root path
