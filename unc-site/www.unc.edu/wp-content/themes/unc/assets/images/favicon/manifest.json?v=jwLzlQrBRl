@@ -1,0 +1,18 @@
+{
+    "name": "unc",
+    "icons": [
+        {
+            "src": "{{ theme.path }}/assets/images/favicon/android-chrome-192x192.png?v=jwLzlQrBRl",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "{{ theme.path }}/assets/images/favicon/android-chrome-256x256.png?v=jwLzlQrBRl",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#4B9CD3",
+    "background_color": "#4B9CD3",
+    "display": "standalone"
+}
