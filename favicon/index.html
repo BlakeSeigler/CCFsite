@@ -38,7 +38,7 @@ fbq('init', '553655075018580', {}, {
 				f.parentNode.insertBefore( j, f );
 			} )( window, document, 'script', 'dataLayer', 'GTM-TPZ8LKZW' );
 			
-/* ]]> */</script><link rel="icon" href="https://www.unc.edu/wp-content/uploads/2025/11/cropped-CB_Background-Favicon-150x150.jpg" sizes="32x32"/><link rel="icon" href="https://www.unc.edu/wp-content/uploads/2025/11/cropped-CB_Background-Favicon-300x300.jpg" sizes="192x192"/><link rel="apple-touch-icon" href="https://www.unc.edu/wp-content/uploads/2025/11/cropped-CB_Background-Favicon-300x300.jpg"/><meta name="msapplication-TileImage" content="https://www.unc.edu/wp-content/uploads/2025/11/cropped-CB_Background-Favicon-300x300.jpg"/><style type="text/css" id="wp-custom-css">	tribe-events-bar {
+/* ]]> */</script><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" href="/favicon.ico"><link rel="shortcut icon" href="/favicon.ico"><meta name="theme-color" content="#000000"><style type="text/css" id="wp-custom-css">	tribe-events-bar {
 	margin-bottom: 90px;
 }
 
@@ -52,13 +52,18 @@ header#header .header {
 #unc-experience-header { position: relative; width: 100%; }
 #unc-experience-header > .content {
     background-color: rgba(0,0,0,.6);
-    width: 100%;
-    left: 0; right: 0;
+    width: 33.333%;
+    max-width: 33.333%;
+    left: 0; right: auto;
 }
 #unc-experience-header > .content,
 #unc-experience-header > .content a,
 #unc-experience-header > .content h2,
 #unc-experience-header > .content p { color: #fff; }
+
+@media (max-width: 959px) {
+    #unc-experience-header > .content { width: 100%; max-width: 100%; right: 0; }
+}
 
 /* Top header nav styles */
 #top-header-nav {
@@ -81,6 +86,32 @@ header#header .header {
 #menu-item-56035   /* Search */
 { display: none !important; }
 
+/* Hero background image override */
+#unc-experience-header > .media {
+    background-image: url('/img/IMG_1469.jpeg') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Remove header background logo; we'll render logo on the overlay instead */
+header#header .header .custom-logo-link { display: none !important; }
+header#header .header .container { background: none !important; }
+
+/* Place logo on the translucent left-third overlay */
+#unc-experience-header > .content {
+    background-image: url('/logo/carolina-chip-fab.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: calc(100% - 32px) auto;
+    padding-top: 120px;
+}
+@media (max-width: 959px){
+    #unc-experience-header > .content {
+        padding-top: 80px;
+        background-size: calc(100% - 24px) auto;
+    }
+}
+
 header#header nav#navigation-main-menu ul.menu>li a, header#header nav#navigation-main-menu ul.menu>li button,#unc-experience-header>.content a.begin {
     font-size:19px;
 }
@@ -99,7 +130,8 @@ header#header nav#navigation-main-menu ul.menu>li a, header#header nav#navigatio
 @media screen and (min-width: 960px){
 header#header #navigation.fixed {
     background-color:#4b9cd3;
-    border-bottom: 1px solid #fff !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
 	}
 	header#header #navigation.fixed nav#navigation-main-menu ul.menu>li.menu-depth-0>a, header#header #navigation.fixed nav#navigation-main-menu ul.menu>li.menu-depth-0>button {
 	color:#fff;
