@@ -37,4 +37,27 @@
   }
 })();
 
+/* Accordions for project cards */
+(function () {
+  var triggers = document.querySelectorAll('.accordion-trigger');
+  if (!triggers || triggers.length === 0) return;
+
+  triggers.forEach(function (btn) {
+    var targetId = btn.getAttribute('data-target');
+    var panel = document.getElementById(targetId);
+    if (!panel) return;
+
+    btn.addEventListener('click', function () {
+      var isOpen = !panel.hasAttribute('hidden');
+      if (isOpen) {
+        panel.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+
 
